@@ -1,0 +1,25 @@
+<h3 class="mt-3">Deposita assegni</h3>
+<h4>Riempi i seguenti campi per depositare il tuo assegno</h4>
+<form [formGroup]="assegno" (ngSubmit)="aggiungi()">
+    <div class="input-container">
+        <label for="exampleFormControlInput1" class="form-label">Importo</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" formControlName="importo">
+    </div>
+    <div class="input-container">
+        <label for="exampleFormControlInput1" class="form-label">Nome beneficiario</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nomeBeneficiario">
+    </div>
+    <div class="input-container">
+        <label for="exampleFormControlInput1" class="form-label">Nome della Banca</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nomeBanca">
+    </div>
+    <div class="input-container">
+        <label for="exampleFormControlInput1" class="form-label">Causale</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="causale">
+    </div>
+ 
+    <button  type="submit" class="btn btn-secondary mt-3">Deposita</button>
+   
+</form>
+
+<p *ngIf="messaggio">Deposito effettuato! il saldo contabile è: {{saldo | currency:"EUR"}}</p>

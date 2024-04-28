@@ -1,0 +1,12 @@
+<h3 class="mt-3">Deposita contante</h3>
+<p>Quanto vuoi depositare?</p>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Deposita contante</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" [formControl]="contante">
+
+    <button type="submit" [disabled]="contante.invalid" class="btn btn-secondary mt-3" (click)="aggiungi()">Deposita</button>
+
+    <p *ngIf="messaggio">Deposito effettuato! il saldo contabile è
+        di: {{saldo|currency:"EUR"}}</p>
+</div>

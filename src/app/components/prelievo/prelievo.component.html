@@ -1,0 +1,13 @@
+<h3 class="mt-5">Prelievo</h3>
+<p>Quanto vuoi prelevare?</p>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Prelievo</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" [formControl]="prelievo">
+
+    <button type="button" [disabled]="prelievo.invalid" class="btn btn-secondary mt-3" (click)="sottrai()">Preleva</button>
+
+
+    <p *ngIf="messaggio">{{messaggio}} {{saldo | currency:"EUR"}}</p>
+
+</div>
